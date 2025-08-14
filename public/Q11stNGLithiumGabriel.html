@@ -10,14 +10,25 @@
         </label></br> 
 
         <label> Enter number of snacks
-            <input id="snacks"/>
+            <input id="numPerDay"/>
         </label></br>
 
         <p> Result :
             <span id="resultHere"></span>
         </p>
-        <button> Accept Input </button>
+        
+        <button onclick="result()"> Accept Input </button>
 
-        <script src="script.js"></script>
+        <script>
+            function result() {
+               let age = document.getElementById("age").value;
+               let maxAge = document.getElementById("maxAge").value;
+               let numPerDay = document.getElementById("numPerDay").value;
+               
+               let totalRequired = (numPerDay * 365) * (maxAge - age);
+
+               document.getElementById("resultHere").innerHTML = `You will need ${totalRequired} Presto cookie packs to last you until the ripe age of ${maxAge}`;
+            }
+        </script>
     </body>
 </html>
