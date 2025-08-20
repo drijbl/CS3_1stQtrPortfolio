@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2> Q1 2nd Graded Exercise submitted by Djibril Gabriel of 9Lithium</h2>
+
+    <label> Meal Price:
+        <input id="mealPrice"/>
+    </label></br>
+
+    <label> Tip:
+        <input id="tip"/>
+    </label></br> 
+
+    <label> Service Charge (%):
+        <input id="serviceCharge"/>
+    </label></br></br>
+
+    <button onclick="totalMeal()"> Accept Input </button></br>
+    
+    <p> Total Meal:
+        <span id="totalMeal"></span>
+    </p>
+
+    <script>
+        function totalMeal() {
+            let mealPrice = parseFloat(document.getElementById("mealPrice").value);
+            let tip = parseFloat(document.getElementById("tip").value);
+            let serviceCharge = parseFloat(document.getElementById("serviceCharge").value);
+
+            let totalCost = mealPrice + tip + (serviceCharge / 100 * mealPrice);
+
+            document.getElementById("totalMeal").innerHTML = totalCost.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
